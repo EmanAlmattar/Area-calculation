@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>آلة حساب مساحة المستطيل</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #e0f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      color: #00796b;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #b2dfdb;
+      border-radius: 10px;
+      font-size: 16px;
+      background-color: #f1fdfd;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #26a69a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00796b;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #004d40;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>آلة حساب مساحة المستطيل</h2>
+
+  <div class="container">
+    <label for="length">الطول:</label>
+    <input type="number" id="length" placeholder="أدخل الطول">
+
+    <label for="width">العرض:</label>
+    <input type="number" id="width" placeholder="أدخل العرض">
+
+    <button onclick="calculateArea()">احسب المساحة</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateArea() {
+      let length = parseFloat(document.getElementById("length").value);
+      let width = parseFloat(document.getElementById("width").value);
+      let result = document.getElementById("result");
+
+      if (!length || !width || length <= 0 || width <= 0) {
+        result.textContent = "يرجى إدخال قيم صحيحة للطول والعرض.";
+        return;
+      }
+
+      let area = length * width;
+      result.textContent = "مساحة المستطيل: " + area + " وحدة مربعة";
+    }
+  </script>
+
+</body>
+</html>
+  
